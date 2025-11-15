@@ -232,4 +232,3 @@ TEST(Display_Called) {
 int main() {
     return UnitTest::RunAllTests();
 }
-    // Вернём обратно
