@@ -1,6 +1,6 @@
 #include <iostream>
 #include <limits>
-#include "game.h"
+#include "Game.h"
 
 void showMenu();
 void newGame(Game &game);

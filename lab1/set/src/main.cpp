@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
-#include "set.h"
+#include "Set.h"
 
 int main()
 {

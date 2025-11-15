@@ -1,5 +1,5 @@
 #include <UnitTest++/UnitTest++.h>
-#include "set.h"
+#include "Set.h"
 #include <stdexcept>
 #include <sstream>
 #include <iostream>

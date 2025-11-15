@@ -1,5 +1,5 @@
 #include <UnitTest++/UnitTest++.h>
-#include "game.h"
+#include "Game.h"
 #include <vector>
 #include <sstream>
 #include <stdexcept>

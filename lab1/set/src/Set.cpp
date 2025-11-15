@@ -1,6 +1,6 @@
 #include <iostream>
 #include <algorithm>
-#include "set.h"
+#include "Set.h"
 
 Set::Set() = default;
 

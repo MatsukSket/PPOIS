@@ -1,5 +1,5 @@
 #include <iostream>
-#include "game.h"
+#include "Game.h"
 #include <iomanip>
 #include <stdexcept>
 #include <random>
