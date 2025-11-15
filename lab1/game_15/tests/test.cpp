@@ -1,6 +1,7 @@
 #include <UnitTest++/UnitTest++.h>
 #include "game.h"
 #include <vector>
+#include <sstream>
 #include <stdexcept>
 #include <set>
 #include <iostream>
@@ -231,3 +232,4 @@ TEST(Display_Called) {
 int main() {
     return UnitTest::RunAllTests();
 }
+    // Вернём обратно
