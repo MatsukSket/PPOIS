@@ -4,7 +4,6 @@
 #include <sstream>
 #include <iostream>
 
-// Вспомогательная функция для захвата вывода print()
 std::string capture_print(const Set& s) {
     std::stringstream buffer;
     std::streambuf* old = std::cout.rdbuf(buffer.rdbuf());
