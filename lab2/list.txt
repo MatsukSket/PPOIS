@@ -1,0 +1,89 @@
+MuseumProject
+
+ events: 3
+Event 6 8 -> Lecture, Workshop
+    Lecture 2 4 -> 
+    Workshop 1 3 ->
+
+ exhibits: 5
+Artwork 5 3 -> Sculpture, Photograph, Painting
+    Sculpture 2 3 ->
+    Photograph 2 3 ->
+    Painting 2 3 ->
+Exhibit 6 7 ->
+
+ finance: 4
+Ticket 4 3 ->
+Donation 3 3 ->
+GiftCard 4 5 ->
+MuseumPass 6 6 ->
+
+ people: 11
+Human 8 3 -> Visitor, Employee, Volunteer
+    Visitor 4 10 ->
+    Employee 2 2 -> TicketSeller, SecurityGuard, Lecturer, Janitor, Instructor, Guide, Administrator
+        TicketSeller 0 1 ->
+        SecurityGuard 1 4 ->
+        Lecturer 0 1 ->
+        Janitor 0 1 ->
+        Instructor 0 1 ->
+        Guide 0 1 ->
+        Administrator 1 8 ->
+    Volunteer 4 4 ->
+
+ shop: 13
+Souvenir 5 3 -> TShirt, Poster, Postcard, Mug, Keychain, Book
+    TShirt 2 2 ->
+    Poster 3 2 ->
+    Postcard 3 2 ->
+    Mug 3 2 ->
+    Keychain 1 2 ->
+    Book 3 2 ->
+MenuItem 5 3 -> MainCourse, Drink, Dessert
+    Drink 2 2 -> Coffee, Smoothie
+        Coffee 2 2 ->
+        Smoothie 3 2 -> 
+    MainCourse 3 2 ->
+    Dessert 3 2 -> 
+
+ social_media: 3
+SocialMedia 7 5 -> TikTok, Instagram
+    TikTok 2 2 ->
+    Instagram 2 2 ->
+
+ spaces: 7
+Room 4 5 -> StorageRoom, Shop, Office, Hall, Cafe
+    StorageRoom 1 2 ->
+    Shop 1 6 ->
+    Office 0 1 ->
+    Hall 4 6 ->
+    Cafe 1 6 ->
+Museum 6 12 -> 
+
+ tech: 5
+Alarm 2 4 ->
+Camera 2 2 ->
+ClimateControl 2 2 ->
+LightningSystem 4 4 ->
+MuseumVehicle 5 5 ->
+
+exceptions: 12
+TicketExpiredException 0 0 ->
+ExhibitNotFoundException 0 0 ->
+InvalidEmployeeIdException 0 0 ->
+ItemNotFoundException 0 0 ->
+HallOvercrowdedException 0 0 ->
+InvalidAgeException 0 0 ->
+InvalidNameException 0 0 ->
+InvalidHallCapacityException 0 0 ->
+HallIsDirtyException 0 0 ->
+HallIsSmallException 0 0 ->
+InvalidMembershipException 0 0 ->
+EventHasNoLocationException 0 0 ->
+
+
+Классы: 50
+Поля: 151
+Методы: 152
+Исключения: 12
+Ассоциации: 33

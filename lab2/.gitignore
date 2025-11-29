@@ -1,0 +1,3 @@
+*.sh
+CMakeLists.txt
+build/
