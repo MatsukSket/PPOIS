@@ -9,12 +9,12 @@ void SecurityGuard::assignRoom(Room& room) {
 }
 
 bool SecurityGuard::patrol() const {
-    if (!assignedRoom_) return true; 
+    if (!assignedRoom_) 
+        return true; 
     return assignedRoom_->isClean(); 
 }
 
 void SecurityGuard::enforceCleanliness() const {
-    if (assignedRoom_ && !assignedRoom_->isClean()) {
+    if (assignedRoom_ && !assignedRoom_->isClean()) 
         throw HallIsDirtyException();
-    }
 }

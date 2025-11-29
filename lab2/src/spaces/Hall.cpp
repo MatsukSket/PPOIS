@@ -3,9 +3,8 @@
 
 Hall::Hall(std::string name, int capacity)
     : Room(std::move(name)), capacity_(capacity) {
-    if (capacity_ <= 0) {
+    if (capacity_ <= 0)
         throw InvalidHallCapacityException();
-    }
 }
 
 std::string Hall::getDescription() const {
@@ -20,9 +19,9 @@ void Hall::removeVisitor() {
 }
 
 void Hall::addVisitor() {
-    if (currentVisitors_ < capacity_) {
+    if (currentVisitors_ < capacity_)
         currentVisitors_++;
-    } else {
+    else 
         throw HallOvercrowdedException();
-    }
+        
 }

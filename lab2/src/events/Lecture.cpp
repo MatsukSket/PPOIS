@@ -5,7 +5,7 @@ Lecture::Lecture(std::string title,
                  std::string topic,
                  Hall& hall,
                  int maxParticipants)
-    : Event(std::move(title), "TBD", &hall, maxParticipants), // organizer пока неизвестен
+    : Event(std::move(title), "TBD", &hall, maxParticipants), 
       topic_(std::move(topic)) {}
 
 void Lecture::assignLecturer(Lecturer& lecturer) {

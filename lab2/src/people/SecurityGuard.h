@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Employee.h"
-#include "../spaces/Room.h" // ← теперь принимает любой Room
+#include "../spaces/Room.h"
 
 class SecurityGuard : public Employee {
 public:
@@ -10,11 +10,9 @@ public:
                            short age = 0,
                            char gender = 'U');
 
-    // Устанавливает комнату для патрулирования
     void assignRoom(Room& room);
     Room* assignedRoom() const { return assignedRoom_; }
 
-    // Проверяет комнату
     bool patrol() const;
     void enforceCleanliness() const;
 

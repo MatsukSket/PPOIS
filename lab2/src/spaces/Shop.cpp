@@ -16,20 +16,21 @@ bool Shop::hasSouvenir(const std::string& name) const {
 double Shop::getSouvenirPrice(const std::string& name) const {
     auto it = std::find_if(inventory_.begin(), inventory_.end(),
         [&](const auto& item) { return item->name() == name; });
-    if (it != inventory_.end()) {
+        
+    if (it != inventory_.end())
         return (*it)->price();
-    }
+
     throw std::runtime_error("Souvenir not found in shop");
 }
 
 void Shop::buySouvenir(const std::string& itemName) {
     auto it = std::find_if(inventory_.begin(), inventory_.end(),
         [&](const auto& item) { return item->name() == itemName; });
-    if (it != inventory_.end()) {
-        inventory_.erase(it); // удаляем купленный сувенир
-    } else {
+
+    if (it != inventory_.end())
+        inventory_.erase(it);
+    else 
         throw std::runtime_error("Souvenir not available for purchase");
-    }
 }
 
 std::string Shop::getDescription() const {

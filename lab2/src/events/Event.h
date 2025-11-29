@@ -20,7 +20,7 @@ public:
     size_t participantCount() const { return participants_.size(); }
 
     void setLocation(Hall& hall) { location_ = &hall; }
-    void addParticipant(Visitor* visitor); // общий метод
+    void addParticipant(Visitor* visitor);
 
     virtual std::string getInfo() const = 0;
 

@@ -6,11 +6,11 @@ Instructor::Instructor(std::string name, std::string employeeId, short age, char
     : Employee(std::move(name), std::move(employeeId), "Workshop Master", age, gender) {}
 
 std::string Instructor::conductWorkshop(const Workshop& workshop) const {
-    if (workshop.instructor() != this) {
+    if (workshop.instructor() != this) 
         throw std::runtime_error("This instructor is not assigned to the workshop");
-    }
-    if (!workshop.location()) {
+        
+    if (!workshop.location()) 
         throw EventHasNoLocationException();
-    }
+        
     return "Instructor " + name() + " conducted: " + workshop.title();
 }

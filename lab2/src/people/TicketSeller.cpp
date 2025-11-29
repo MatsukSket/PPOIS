@@ -8,8 +8,8 @@ TicketSeller::TicketSeller(std::string name,
     : Employee(std::move(name), std::move(employeeId), "Ticket Seller", age, gender) {}
 
 Ticket TicketSeller::sellTicket(const std::string& visitorName, Ticket::Type type) const {
-    if (visitorName.empty()) {
+    if (visitorName.empty())
         throw InvalidNameException();
-    }
+        
     return Ticket(visitorName, type);
 }

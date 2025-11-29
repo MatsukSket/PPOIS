@@ -13,19 +13,18 @@ MuseumPass::MuseumPass(std::string passId,
       validFrom_(std::move(validFrom)),
       validUntil_(std::move(validUntil)),
       entryCount_(entryCount) {
-    if (passId_.empty()) {
+    if (passId_.empty()) 
         throw std::invalid_argument("Pass ID must not be empty");
-    }
-    if (ownerName_.empty()) {
+        
+    if (ownerName_.empty()) 
         throw std::invalid_argument("Owner name must not be empty");
-    }
-    if (passType_.empty()) {
+        
+    if (passType_.empty()) 
         throw std::invalid_argument("Pass type must not be empty");
-    }
-    if (validFrom_.empty() || validUntil_.empty()) {
+        
+    if (validFrom_.empty() || validUntil_.empty()) 
         throw std::invalid_argument("Valid dates must not be empty");
-    }
-    if (entryCount_ < 0) {
+        
+    if (entryCount_ < 0) 
         throw std::invalid_argument("Entry count cannot be negative");
-    }
 }

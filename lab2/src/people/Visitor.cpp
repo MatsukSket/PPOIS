@@ -15,60 +15,59 @@ Visitor::Visitor(std::string name,
 {
     if (membershipLevel_ != "Standard" &&
         membershipLevel_ != "Gold" &&
-        membershipLevel_ != "VIP") {
+        membershipLevel_ != "VIP") 
         throw InvalidMembershipException();
-    }
-    if (money_ < 0) {
+        
+    if (money_ < 0) 
         throw std::invalid_argument("Money cannot be negative");
-    }
 }
 void Visitor::enterHall(Hall& hall) const {
-    if (!ticket() || ticket()->isExpired()) {
+    if (!ticket() || ticket()->isExpired()) 
         throw TicketExpiredException();
-    }
-    hall.addVisitor(); // увеличиваем счётчик в зале
+
+    hall.addVisitor();
     currentHall_ = &hall;
 }
 
 void Visitor::leaveHall() const {
     if (currentHall_) {
-        currentHall_->removeVisitor(); // уменьшаем счётчик
+        currentHall_->removeVisitor();
         currentHall_ = nullptr;
     }
 }
 
 void Visitor::attendEvent(Event& event) const {
-    if (!event.location()) {
+    if (!event.location())
         throw std::runtime_error("Event has no location");
-    }
-    enterHall(*event.location()); // заходим в зал события
+        
+    enterHall(*event.location()); 
     event.addParticipant(const_cast<Visitor*>(this));
 }
 
 void Visitor::buyFromShop(Shop& shop, const std::string& itemName) {
-    if (!shop.hasSouvenir(itemName)) {
+    if (!shop.hasSouvenir(itemName)) 
         throw std::runtime_error("Item not in stock");
-    }
+
     double price = shop.getSouvenirPrice(itemName);
     spendMoney(price);
-    shop.buySouvenir(itemName); // ← правильно: buySouvenir
+    shop.buySouvenir(itemName);
 }
 
 void Visitor::buyFromCafe(Cafe& cafe, const std::string& itemName) {
-    if (!cafe.hasItem(itemName)) { // ← hasItem, а не hasMenuItem
+    if (!cafe.hasItem(itemName)) 
         throw std::runtime_error("Item not available");
-    }
-    double price = cafe.getItemPrice(itemName); // ← getItemPrice
+
+    double price = cafe.getItemPrice(itemName);
     spendMoney(price);
-    cafe.buyItem(itemName); // ← buyItem, а не serveItem
+    cafe.buyItem(itemName);
 }
 
 void Visitor::spendMoney(double amount) {
-    if (amount < 0) {
+    if (amount < 0) 
         throw std::invalid_argument("Amount cannot be negative");
-    }
-    if (amount > money_) {
+        
+    if (amount > money_) 
         throw std::runtime_error("Insufficient funds");
-    }
+
     money_ -= amount;
 }

@@ -8,7 +8,6 @@ Employee::Employee(std::string name,
     : Human(std::move(name), age, gender),
       employeeId_(std::move(employeeId)),
       position_(std::move(position)) {
-    if (employeeId_.empty()) {
+    if (employeeId_.empty()) 
         throw std::invalid_argument("Employee ID must not be empty");
-    }
 }
