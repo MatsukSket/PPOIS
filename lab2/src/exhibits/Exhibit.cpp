@@ -17,8 +17,8 @@ void Exhibit::addArtwork(Artwork* artwork) {
 
 std::vector<std::string> Exhibit::getArtworkInfo() const {
     std::vector<std::string> info;
-    for (const auto* artwork : artworks_) {
+    for (const auto* artwork : artworks_) 
         info.push_back(artwork->getInfo());
-    }
+        
     return info;
 }
